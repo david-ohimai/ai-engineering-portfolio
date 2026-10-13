@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>David Ohimai | AI Engineer</title>
+<meta name="description" content="David Ohimai is an AI engineer building Python and TypeScript backends for LLM applications: RAG pipelines, tool-using agents, and the guardrails that make them dependable.">
+<meta name="author" content="David Ohimai">
+<meta name="theme-color" content="#2448d8">
+<meta property="og:url" content="https://david-ohimai.github.io/ai-engineering-portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="David Ohimai | AI Engineer">
+<meta property="og:description" content="RAG pipelines, tool-using agents and the backend guardrails that make LLMs dependable.">
+<meta property="og:image" content="https://david-ohimai.github.io/ai-engineering-portfolio/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121417'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' fill='%23fff' text-anchor='middle'%3EDO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  // Apply the saved theme before first paint to avoid a flash.
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></g></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8Z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h5"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></g></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5v-3a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h16v15H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav" id="nav">
+  <div class="container nav__in">
+    <a class="brand" href="#top" aria-label="David Ohimai, back to top"><span class="brand__mark" aria-hidden="true">DO</span>David Ohimai <small>/ ai-engineer</small></a>
+    <nav id="menu" class="nav__links" aria-label="Primary">
+      <a href="#work">Case studies</a>
+      <a href="#more">More work</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__tools">
+      <button class="cmdk-btn" type="button" id="cmdk-open" aria-label="Open quick navigation"><svg width="15" height="15" aria-hidden="true"><use href="#i-search"/></svg><span class="lbl">Jump to…</span><kbd>Ctrl K</kbd></button>
+      <button class="icon-btn" type="button" id="theme" aria-label="Toggle dark mode"><svg class="theme-icon-light" aria-hidden="true"><use href="#i-moon"/></svg><svg class="theme-icon-dark" aria-hidden="true"><use href="#i-sun"/></svg></button>
+      <button class="icon-btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <canvas id="dots" aria-hidden="true"></canvas>
+  <div class="container hero__in">
+    <div class="hero__copy">
+      <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>Open to remote AI &amp; backend roles and open source</a>
+      <p class="hero__who"><strong>David Ohimai</strong> · <span class="typed" id="typed" aria-hidden="true">AI Engineer</span><span class="sr-only">AI Engineer, Backend Engineer, RAG and agents</span></p>
+      <h1 id="hero-title">Backend systems that make <em>LLMs dependable.</em></h1>
+      <p class="lead">I build Python and TypeScript backends around large language models: retrieval pipelines that ground answers in real documents, agents with hard limits, and fallbacks for when a model provider goes down.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#work">See the case studies</a>
+        <a class="btn" href="https://drive.google.com/file/d/1dZ7vPFGzl32c1JyRlWF7Z8-MhBDidhgs/view?usp=sharing" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-file"/></svg>Résumé</a>
+      </div>
+      <p class="hero__links">
+        <a href="https://github.com/david-ohimai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>david-ohimai</a>
+        <a href="https://github.com/Daveohi" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Daveohi</a>
+        <a href="https://www.linkedin.com/in/david-ohimai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+        <a href="mailto:daveohimai@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>daveohimai@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="hero__side">
+      <div class="portrait">
+        <img src="assets/img/david-ohimai.jpg" alt="Portrait of David Ohimai" width="76" height="76">
+        <p><strong>David Ohimai</strong>AI Engineer · Benin City, Nigeria<br><span class="muted">Mastering Backend AI Engineering Bootcamp, 2026</span></p>
+      </div>
+      <div class="term" role="img" aria-label="Animated example trace of a DocuChat question: authentication, rate limiting, query embedding, vector search, context assembly, model routing, and a cited answer.">
+        <div class="term__bar" aria-hidden="true"><i></i><i></i><i></i><span>docuchat · request trace</span><button type="button" id="replay">replay</button></div>
+        <div class="term__body" id="trace" aria-hidden="true"></div>
+        <div class="term__foot" aria-hidden="true">Illustrative values · the pipeline from case study 01</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROOF ============================== -->
+<section class="proof" aria-label="At a glance">
+  <div class="container proof__grid">
+    <div class="proof__item"><p class="proof__num"><span data-count="70">0</span><sup>+</sup></p><p class="proof__lbl">automated tests in my team's KodeBuddy AI backend</p></div>
+    <div class="proof__item"><p class="proof__num"><span data-count="8">0</span></p><p class="proof__lbl">specialist reviewer agents in my code-review supervisor</p></div>
+    <div class="proof__item"><p class="proof__num"><span data-count="9">0</span></p><p class="proof__lbl">LLM projects on GitHub, from a first API call to multi-agent</p></div>
+    <div class="proof__item"><p class="proof__num"><span data-count="4">0</span><sup>yrs</sup></p><p class="proof__lbl">shipping software since 2022: web, then mobile, now AI</p></div>
+  </div>
+</section>
+
+<section class="roles" aria-labelledby="roles-title">
+  <div class="container"><h2 class="roles__lbl" id="roles-title">Roles I'm a fit for</h2></div>
+  <div class="marquee"><div class="marquee__track"><ul><li>AI Engineer</li><li>Backend Engineer (Python / TypeScript)</li><li>LLM Application Developer</li><li>RAG Engineer</li><li>Applied AI Engineer</li><li>AI Integration Engineer</li><li>Agent Developer</li><li>API Developer</li></ul><ul aria-hidden="true"><li>AI Engineer</li><li>Backend Engineer (Python / TypeScript)</li><li>LLM Application Developer</li><li>RAG Engineer</li><li>Applied AI Engineer</li><li>AI Integration Engineer</li><li>Agent Developer</li><li>API Developer</li></ul></div></div>
+</section>
+
+<!-- ============================== CASE STUDIES ============================== -->
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow"><b>01 &amp; 02</b> Featured case studies</p>
+        <h2 id="work-title">Two projects from the bootcamp, in depth.</h2>
+      </div>
+      <p>One I built lesson by lesson with the instructor. One my group designed from a real problem in Nigeria. Each covers the problem, how it works, where AI earns its place, and what I'd do next.</p>
+    </div>
+
+    <!-- ---------- CASE 01: DOCUCHAT ---------- -->
+    <article class="case" id="docuchat" aria-labelledby="dc-title">
+      <div class="case__top">
+        <div>
+          <p class="case__tag">01 / Guided bootcamp project</p>
+          <h3 class="case__title" id="dc-title">DocuChat</h3>
+          <p class="case__sub">A multi-user "chat with your documents" backend. Upload a PDF, ask a question, and get an answer drawn only from that document, with citations to the exact passages.</p>
+        </div>
+        <div class="case__links">
+          <a class="btn btn--primary" href="https://github.com/david-ohimai/docuchat-bootcamp-project" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View repository</a>
+        </div>
+      </div>
+
+      <div class="bento">
+        <div class="b b--6 b--lead"><h3>Problem</h3><p>LLMs don't know what's in your files. Ask about your own handbook and they either refuse or invent an answer.</p></div>
+        <div class="b b--6 b--lead"><h3>Solution</h3><p>Fetch the relevant passages first, then have the model answer from those passages only, with each claim linked to its source.</p></div>
+
+        <div class="b b--12">
+          <h3>Architecture: click a component</h3>
+          <div class="arch">
+            <div class="arch__fig"><svg id="arch" viewBox="0 0 712 350" role="group" aria-label="DocuChat architecture diagram. Each component is a button that shows details.">
+              <defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor" style="color:var(--line-2)"/></marker></defs>
+              <path class="edge" id="e-client-api" d="M100 180 H130"/>
+              <path class="edge" id="e-api-svc" d="M280 180 C300 180 300 110 320 110"/>
+              <path class="edge" id="e-svc-pg" d="M470 104 C495 104 495 36 520 36"/>
+              <path class="edge" id="e-svc-redis" d="M470 116 C495 116 495 118 520 118"/>
+              <path class="edge" id="e-svc-mcp" d="M395 136 V228"/>
+              <path class="edge" id="e-redis-worker" d="M595 144 V174"/>
+              <path class="edge" id="e-worker-pg" d="M670 196 C702 196 702 36 670 36"/>
+              <path class="edge" id="e-worker-mcp" d="M520 204 C495 204 495 248 470 248"/>
+              <path class="edge" id="e-mcp-llm" d="M470 260 C495 260 495 312 520 312"/>
+              <circle class="pulse" id="pulse" r="4" cx="-10" cy="-10"/>
+              <text class="grp-lbl" x="520" y="0">DATA + WORKERS</text>
+              <text class="grp-lbl" x="520" y="276">EXTERNAL</text>
+              <g class="node" data-node="client" tabindex="0" role="button" aria-label="Client"><rect x="4" y="154" width="96" height="52" rx="8"/><text x="52" y="177" text-anchor="middle">Client</text><text class="sub" x="52" y="193" text-anchor="middle">REST · JSON</text></g>
+              <g class="node" data-node="api" tabindex="0" role="button" aria-label="Express API and middleware"><rect x="130" y="154" width="150" height="52" rx="8"/><text x="205" y="177" text-anchor="middle">Express API</text><text class="sub" x="205" y="193" text-anchor="middle">auth · limits · zod</text></g>
+              <g class="node" data-node="svc" tabindex="0" role="button" aria-label="Service layer"><rect x="320" y="84" width="150" height="52" rx="8"/><text x="395" y="107" text-anchor="middle">Services</text><text class="sub" x="395" y="123" text-anchor="middle">rag · search · docs</text></g>
+              <g class="node" data-node="mcp" tabindex="0" role="button" aria-label="OpenAI gateway"><rect x="320" y="228" width="150" height="52" rx="8"/><text x="395" y="251" text-anchor="middle">OpenAI gateway</text><text class="sub" x="395" y="267" text-anchor="middle">retry · breaker · cost</text></g>
+              <g class="node" data-node="pg" tabindex="0" role="button" aria-label="PostgreSQL with pgvector"><rect x="520" y="10" width="150" height="52" rx="8"/><text x="595" y="33" text-anchor="middle">PostgreSQL</text><text class="sub" x="595" y="49" text-anchor="middle">prisma · pgvector</text></g>
+              <g class="node" data-node="redis" tabindex="0" role="button" aria-label="Redis"><rect x="520" y="92" width="150" height="52" rx="8"/><text x="595" y="115" text-anchor="middle">Redis</text><text class="sub" x="595" y="131" text-anchor="middle">cache · limits · queue</text></g>
+              <g class="node" data-node="worker" tabindex="0" role="button" aria-label="BullMQ ingestion worker"><rect x="520" y="174" width="150" height="52" rx="8"/><text x="595" y="197" text-anchor="middle">Ingestion worker</text><text class="sub" x="595" y="213" text-anchor="middle">bullmq · chunk · embed</text></g>
+              <g class="node" data-node="llm" tabindex="0" role="button" aria-label="OpenAI API"><rect x="520" y="286" width="150" height="52" rx="8"/><text x="595" y="309" text-anchor="middle">OpenAI API</text><text class="sub" x="595" y="325" text-anchor="middle">embeddings + chat</text></g>
+            </svg></div>
+            <div class="arch__panel" aria-live="polite">
+              <h4 id="arch-title">Express API</h4>
+              <p class="k" id="arch-k">routes → controllers → services → repositories</p>
+              <p id="arch-body"></p>
+              <ul id="arch-list"></ul>
+              <p class="arch__hint">The moving dot follows one question: in through the API, a vector search in Postgres, then out to the model through the OpenAI gateway (retries and a circuit breaker).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="b b--12">
+          <h3>How a question becomes a cited answer</h3>
+          <ol class="pipe" id="pipe">
+            <li><b>Authenticate</b><span>JWT verified, tier permission checked, per-user rate limit applied.</span></li>
+            <li><b>Embed the question</b><span>One embedding call, cached in Redis so the same text is never paid for twice.</span></li>
+            <li><b>Vector search</b><span>pgvector cosine search over chunks, scoped to this user's documents. Top-K, with a minimum score cutoff.</span></li>
+            <li><b>Assemble context</b><span>Pick chunks within a token budget, number them [1], [2]… and keep track of which ones were used.</span></li>
+            <li><b>Build the prompt</b><span>System rules ("answer only from context, cite sources") + context + history + question.</span></li>
+            <li><b>Call the model</b><span>Temperature 0.1, through a circuit breaker with retries. If nothing relevant was found, the model isn't called at all.</span></li>
+            <li><b>Answer + citations</b><span>Response returned with citations pointing to document, chunk and passage.</span></li>
+            <li><b>Log cost + trace</b><span>Tokens, cost and latency recorded against a correlation ID for the audit log.</span></li>
+          </ol>
+        </div>
+
+        <div class="b b--12">
+          <h3>What I built, week by week</h3>
+          <div class="tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="DocuChat build by week">
+              <button class="tab" role="tab" id="t-w1" aria-controls="p-w1" aria-selected="true"><small>W1</small>API foundations</button>
+              <button class="tab" role="tab" id="t-w2" aria-controls="p-w2" aria-selected="false" tabindex="-1"><small>W2</small>Business logic &amp; jobs</button>
+              <button class="tab" role="tab" id="t-w3" aria-controls="p-w3" aria-selected="false" tabindex="-1"><small>W3</small>Production hardening</button>
+              <button class="tab" role="tab" id="t-w4" aria-controls="p-w4" aria-selected="false" tabindex="-1"><small>W4</small>AI layer</button>
+            </div>
+            <div class="tabpanel" role="tabpanel" id="p-w1" aria-labelledby="t-w1">
+              <div class="feat"><b>Authentication</b><p>Registration, login, JWT access tokens with refresh-token rotation, logout, and middleware that puts the user context on every request.</p></div>
+              <div class="feat"><b>Event-driven side effects</b><p>An <code>EventEmitter</code> bus so signup logging, notifications and audit entries stay out of the auth logic.</p></div>
+              <div class="feat"><b>REST design + validation</b><p>Plural-noun resources, correct status codes, a standard response envelope, and Zod schemas on every endpoint that takes input.</p></div>
+              <div class="feat"><b>Self-documenting API</b><p>Versioned routes under <code>/api/v1</code> and Swagger docs generated from the code.</p></div>
+            </div>
+            <div class="tabpanel" role="tabpanel" id="p-w2" aria-labelledby="t-w2" hidden>
+              <div class="feat"><b>Layered architecture</b><p>Route → controller → service. Only controllers know about HTTP; services take plain data, so business logic never depends on Express.</p></div>
+              <div class="feat"><b>Permissions + domain model</b><p>Tier-based permissions; documents, chunks, conversations and messages modelled as aggregates. Paginated list endpoints without N+1 queries.</p></div>
+              <div class="feat"><b>Transactions + integrity</b><p>Multi-step writes (upload → chunk → usage log) wrapped in transactions, plus soft delete and an audit trail.</p></div>
+              <div class="feat"><b>Queues + resilient integrations</b><p>BullMQ document worker with exponential-backoff retries and a dead-letter queue. Axios client with timeouts, a circuit breaker, and idempotent, signature-verified webhooks.</p></div>
+            </div>
+            <div class="tabpanel" role="tabpanel" id="p-w3" aria-labelledby="t-w3" hidden>
+              <div class="feat"><b>Caching</b><p>Redis cache-aside on permissions, document metadata and conversation lists, invalidated by events. HTTP caching with ETags and <code>Cache-Control</code>.</p></div>
+              <div class="feat"><b>Rate limiting</b><p>Redis-backed sliding-window limits per user tier, stricter on auth and expensive AI routes, with <code>X-RateLimit-*</code> and <code>Retry-After</code> headers.</p></div>
+              <div class="feat"><b>Security hardening</b><p>Input sanitisation (XSS and prompt-injection aware), Helmet with a CSP, CORS locked to the frontend origin, and secrets kept out of code and logs.</p></div>
+              <div class="feat"><b>Observability</b><p>Structured JSON logs with redaction, Prometheus metrics, correlation IDs carried through every log line, and dependency health checks.</p></div>
+            </div>
+            <div class="tabpanel" role="tabpanel" id="p-w4" aria-labelledby="t-w4" hidden>
+              <div class="feat"><b>Embeddings + pgvector</b><p>Vector columns with HNSW indexes on the chunk table, an embedding service, and a Redis embedding cache.</p></div>
+              <div class="feat"><b>Ingestion pipeline</b><p>PDF and text extraction, recursive chunking with overlap, and a worker that embeds and stores chunks with progress and per-document cost tracking.</p></div>
+              <div class="feat"><b>RAG with citations</b><p>Scored semantic search, token-budgeted context assembly, an "answer from context only" prompt, and retrieval quality tests.</p></div>
+              <div class="feat"><b>Cost tracking + tests</b><p>Every embedding and chat call is priced and logged per user, and exported as a Prometheus counter. 44 unit tests cover chunking, context assembly, auth, retries and sanitisation.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b b--5">
+          <h3>Where AI is used, and where it isn't</h3>
+          <ul class="ticks">
+            <li><b>Embeddings</b> turn chunks and questions into vectors for similarity search.</li>
+            <li><b>Generation</b> writes the answer, limited to the retrieved context.</li>
+            <li>Auth, permissions, chunking, caching and cost tracking are plain code. They need to be predictable.</li>
+          </ul>
+        </div>
+        <div class="b b--7">
+          <h3>Challenges and what I learned</h3>
+          <ul class="ticks">
+            <li><b>Slow calls don't belong in a transaction.</b> The first version of "send message" ran the OpenAI calls inside the database transaction, holding a connection for seconds. I moved retrieval and generation out, leaving a short write-only transaction.</li>
+            <li><b>Middleware order is a security decision.</b> The rate limiters were mounted before authentication, so every request counted as an anonymous free-tier user. They now run after auth and key on the user and their tier.</li>
+            <li><b>Caching can break polling.</b> Cached document metadata kept showing "pending" after ingestion finished. The worker now clears the cache on every status change.</li>
+          </ul>
+        </div>
+        <div class="b b--8 b--dark">
+          <h3>My contribution</h3>
+          <p>Built in class alongside the instructor, Solomon Eseme (Mastering Backend). I turned four weeks of lessons into one coherent codebase: auth, queues, caching, rate limits, observability and the RAG pipeline. Along the way I fixed ten bugs I found in the lesson code and added 44 unit tests. I can explain why each layer exists and what happens when it fails.</p>
+          <ul class="chips" style="margin-top:16px"><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>pgvector</li><li>Redis</li><li>BullMQ</li><li>Zod</li><li>Swagger</li><li>Helmet</li><li>Prometheus</li><li>OpenAI API</li><li>Vitest</li></ul>
+        </div>
+        <div class="b b--4">
+          <h3>Evidence</h3>
+          <ul class="ticks">
+            <li><a href="https://github.com/david-ohimai/docuchat-bootcamp-project" target="_blank" rel="noopener">Source code on GitHub</a></li>
+            <li>README with setup, architecture and a log of the bugs I fixed</li>
+            <li>44 unit tests (Vitest)</li>
+            <li>Swagger docs at <code>/api-docs</code></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- CASE 02: MEDVERIFY ---------- -->
+    <article class="case" id="medverify" aria-labelledby="mv-title">
+      <div class="case__top">
+        <div>
+          <p class="case__tag">02 / Group project · AI Solution Challenge</p>
+          <h3 class="case__title" id="mv-title">MedVerify NG</h3>
+          <p class="case__sub">Photograph a drug pack and learn within seconds whether it's likely genuine, suspicious or unregistered. Every scan also feeds a hotspot map that warns NAFDAC where fakes are spreading.</p>
+        </div>
+        <div class="case__links">
+          <a class="btn btn--primary" href="https://github.com/david-ohimai/medverify-ng" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View repository</a>
+        </div>
+      </div>
+
+      <div class="bento">
+        <div class="b b--7 b--lead"><h3>Problem</h3><p>Counterfeit and substandard medicines are common in Nigerian markets, and buyers can't spot them at the point of purchase. Scratch codes have limited coverage and can be copied.</p></div>
+        <div class="b b--5"><h3>Why it matters</h3><p>Fake drugs cause treatment failure, drug resistance, deaths and financial loss. Verification has to happen <em>before</em> the drug is taken, not after a market raid.</p></div>
+
+        <div class="b b--12">
+          <h3>Who it's for</h3>
+          <div class="users">
+            <div class="user"><b>Patients &amp; caregivers</b><p>Can't spot fakes by eye. Many can't read small print or English labels.</p></div>
+            <div class="user"><b>Pharmacists &amp; vendors</b><p>Have no quick way to check stock bought from wholesalers.</p></div>
+            <div class="user"><b>Community health workers</b><p>Dispense drugs in rural areas far from any regulator.</p></div>
+            <div class="user"><b>NAFDAC &amp; regulators</b><p>Rely on slow, manual raids and tip-offs.</p></div>
+            <div class="user"><b>Genuine manufacturers</b><p>Their brands and packaging get copied.</p></div>
+          </div>
+        </div>
+
+        <div class="b b--12">
+          <h3>How it works</h3>
+          <ol class="vflow" aria-label="Scan flow">
+            <li style="--i:0">Photograph the pack<small>app or WhatsApp</small></li>
+            <li style="--i:1">Read label, logo &amp; codes<span class="ai-tag">AI</span><small>OCR + image match</small></li>
+            <li style="--i:2">Match NAFDAC records<small>plain DB lookup</small></li>
+            <li style="--i:3">Score the risk<span class="ai-tag">AI</span><small>weigh conflicting signals</small></li>
+            <li class="split">
+              <div class="ok" style="--i:4">Low risk: "Likely genuine"<small class="muted mono" style="display:block;font-size:.72rem">result + confidence level</small></div>
+              <div class="bad" style="--i:5">High risk: warn, log &amp; alert<small class="muted mono" style="display:block;font-size:.72rem">feeds hotspot map → NAFDAC</small></div>
+            </li>
+          </ol>
+          <p class="disclaim">Results in English, Pidgin, Hausa, Yoruba and Igbo, including voice.</p>
+        </div>
+
+        <div class="b b--12">
+          <h3>Where AI is needed, and why</h3>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th scope="col">Component</th><th scope="col">What it does</th><th scope="col">Why rules alone fail</th></tr></thead>
+              <tbody>
+                <tr><td>Text recognition (OCR)</td><td>Reads the NAFDAC number, batch, expiry and names from blurry, curved or badly lit photos</td><td>Pack photos vary too much for fixed parsing rules</td></tr>
+                <tr><td>Image recognition</td><td>Compares logo, colours, fonts and layout against verified genuine packs</td><td>Good fakes differ in subtle details people miss</td></tr>
+                <tr><td>Risk scoring</td><td>Combines visual match, record match, and expired or duplicated batches into one score</td><td>The signals often conflict, and yes/no rules can't weigh them</td></tr>
+                <tr><td>Hotspot detection</td><td>Finds clusters of suspicious scans by location and time</td><td>Spotting new patterns across thousands of scans needs pattern analysis</td></tr>
+                <tr><td class="muted">Record lookup</td><td class="muted">Checks registration against NAFDAC's Greenbook</td><td class="muted"><b>No AI.</b> It's an ordinary database search.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="b b--6">
+          <h3>Risks and mitigations</h3>
+          <ul class="ticks">
+            <li><b>Wrong outputs.</b> Show confidence levels, never claim "100% safe", and send high-risk cases to a pharmacist or NAFDAC for review.</li>
+            <li><b>Data gaps.</b> Partner with NAFDAC and manufacturers for pack images and batch data.</li>
+            <li><b>Access.</b> WhatsApp and USSD channels, voice results, and pharmacist-assisted scanning.</li>
+            <li><b>Privacy + abuse.</b> Comply with the Nigeria Data Protection Act 2023, anonymise locations, and rate-limit scans so counterfeiters can't probe the system.</li>
+          </ul>
+        </div>
+        <div class="b b--6 b--dark">
+          <h3>How I'd build it: my engineering take</h3>
+          <ul class="ticks">
+            <li><b>Async scan pipeline.</b> Upload returns a scan ID and a queue worker runs OCR and image matching, the same pattern as DocuChat's ingestion.</li>
+            <li><b>Exact match first.</b> The registration number goes through a plain indexed SQL lookup. Models are only called when that check is inconclusive.</li>
+            <li><b>Pack similarity in pgvector.</b> Image embeddings of verified packs, compared by nearest neighbour.</li>
+            <li><b>Abuse controls.</b> Per-device rate limits and an audit log on every verdict.</li>
+          </ul>
+          <p class="disclaim" style="color:#8b93a1">A proposed design. This group submission was a concept, not built code.</p>
+        </div>
+
+        <div class="b b--12">
+          <h3>Measuring success: proposed pilot targets</h3>
+          <div class="metric">
+            <div><b>≥ 90%</b><span>detection accuracy, checked by NAFDAC lab tests</span></div>
+            <div><b>&lt; 10 s</b><span>from photo upload to result</span></div>
+            <div><b>100k</b><span>monthly active scanners by month 12</span></div>
+            <div><b>≥ 50%</b><span>verified hotspots acted on within 30 days</span></div>
+            <div><b>4 / 5</b><span>user satisfaction rating or higher</span></div>
+          </div>
+          <p class="disclaim">Proposed targets for a 12-month pilot in Lagos, Kano and Onitsha, to be agreed with NAFDAC. These are targets, not results.</p>
+        </div>
+
+        <div class="b b--12">
+          <h3>My contribution</h3>
+          <p>Group submission for Mastering Backend's Week 3 AI Solution Challenge. <b>My part: problem research and solution design.</b> I researched the counterfeit-medicine problem and who it affects, and designed the scan-to-verdict flow, including where AI is needed and where a plain database lookup is enough.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================== MORE WORK ============================== -->
+<section class="section section--tint" id="more" aria-labelledby="more-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow"><b>03</b> More AI work</p>
+        <h2 id="more-title">From a first API call to a multi-agent reviewer.</h2>
+      </div>
+      <p>Everything here is on GitHub with a README and setup instructions. Filter by the kind of AI work each project shows.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span></span></button>
+      <button class="filter" type="button" data-filter="agents" aria-pressed="false">Agents &amp; tools<span></span></button>
+      <button class="filter" type="button" data-filter="rag" aria-pressed="false">RAG &amp; retrieval<span></span></button>
+      <button class="filter" type="button" data-filter="prompting" aria-pressed="false">Prompt engineering<span></span></button>
+      <button class="filter" type="button" data-filter="fullstack" aria-pressed="false">Full-stack AI apps<span></span></button>
+    </div>
+
+    <div class="work" id="workgrid">
+      <article class="wcard wcard--wide" data-cat="agents rag fullstack">
+        <div class="wcard__meta"><span class="badge badge--accent">Team capstone · KodeCamp</span><span class="lang" style="--c:#3572A5">Python</span><span class="lang" style="--c:#3178c6">TypeScript</span></div>
+        <h3>KodeBuddy AI</h3>
+        <p>A learning platform for coding bootcamps with an AI teaching assistant that answers from each learner's own curriculum. When it isn't confident, the question goes to a human trainer instead of getting a guessed answer.</p>
+        <p class="ai"><b>AI component.</b> A LangGraph agent (retrieve → reason → confidence gate → route) with pgvector search, Gemini embeddings, and a Gemini → OpenRouter fallback behind one client interface.</p>
+        <ul class="ticks">
+          <li><b>My role: retrieval &amp; tools engineer.</b> Built the pgvector retrieval layer, with learner scoping enforced inside the SQL so callers can't bypass access rules.</li>
+          <li>Implemented the agent tools (<span class="mono small">search_curriculum</span>, <span class="mono small">search_faqs</span>, <span class="mono small">get_assignment_brief</span>, <span class="mono small">escalate_to_trainer</span>) and a factory that binds each tool to one learner.</li>
+          <li>Built an embedding seam so tests run without network calls, and wrote the retrieval test suite.</li>
+        </ul>
+        <ul class="chips"><li>FastAPI</li><li>LangGraph</li><li>PostgreSQL + pgvector</li><li>SQLModel</li><li>Alembic</li><li>JWT + RBAC</li><li>LangSmith</li><li>pytest</li><li>Next.js</li><li>Render</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/be-kodebuddy-ai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Backend + agent</a><a href="https://github.com/david-ohimai/fe-kodebuddy-ai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Frontend</a></p>
+      </article>
+
+      <article class="wcard" data-cat="agents fullstack">
+        <div class="wcard__meta"><span class="lang" style="--c:#3572A5">Python</span><span class="lang" style="--c:#3178c6">TypeScript</span></div>
+        <h3>Code Review Agent</h3>
+        <p>A supervisor agent takes a diff, commit, PR or repo, picks which specialist reviewers it needs, runs them in parallel, then cross-checks their findings into one prioritised report with a merge recommendation.</p>
+        <p class="ai"><b>AI component.</b> Eight two-phase specialists (security, correctness, performance and more) with repo-inspection tools, a verified model fallback chain, and a seven-scenario evaluation harness.</p>
+        <ul class="chips"><li>LangGraph</li><li>LangChain</li><li>FastAPI</li><li>SSE streaming</li><li>SQLite</li><li>Next.js</li></ul>
+        <!-- TODO: this repo is private; make it public or this link will 404 -->
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/code-review-agent" target="_blank" rel="noopener" data-todo="make code-review-agent public"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="agents rag">
+        <div class="wcard__meta"><span class="lang" style="--c:#3572A5">Python</span></div>
+        <h3>LangChain RAG Agent</h3>
+        <p>A tool-using agent with hybrid retrieval and long-term memory that persists across runs.</p>
+        <p class="ai"><b>AI component.</b> BM25 + vector hybrid search over local files in Chroma, four tools, and conversation memory in its own Chroma collection.</p>
+        <ul class="chips"><li>LangChain</li><li>LangGraph</li><li>ChromaDB</li><li>HuggingFace embeddings</li><li>OpenRouter</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/langchain-rag-agent" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="rag fullstack">
+        <div class="wcard__meta"><span class="lang" style="--c:#3572A5">Python</span></div>
+        <h3>Semantic Chunking RAG System</h3>
+        <p>A FastAPI service: upload TXT, MD, PDF or DOCX, then ask questions and get answers with the supporting context.</p>
+        <p class="ai"><b>AI component.</b> Sentence-boundary chunking, MiniLM embeddings, ChromaDB cosine search, and Gemini 2.5 Flash for generation.</p>
+        <ul class="chips"><li>FastAPI</li><li>ChromaDB</li><li>sentence-transformers</li><li>Gemini</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/Semantic-Chunking-RAG-System" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="agents rag">
+        <div class="wcard__meta"><span class="lang" style="--c:#3178c6">TypeScript</span></div>
+        <h3>Mastra CLI Agent</h3>
+        <p>A command-line assistant on the Mastra TypeScript framework that streams responses and remembers the conversation across turns.</p>
+        <p class="ai"><b>AI component.</b> Four tools: three domain tools plus retrieval over local documents.</p>
+        <ul class="chips"><li>Mastra</li><li>TypeScript</li><li>Streaming</li><li>Memory</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/Mastra-CLI-Agent" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="agents">
+        <div class="wcard__meta"><span class="lang" style="--c:#3572A5">Python</span></div>
+        <h3>Tools for LLMs</h3>
+        <p>A travel-logistics assistant that looks up flights and hotels and converts costs to naira through function calling.</p>
+        <p class="ai"><b>AI component.</b> A hand-written tool-calling loop (max 8 turns) with JSON-schema tools and exponential-backoff retries for rate limits.</p>
+        <ul class="chips"><li>OpenAI SDK</li><li>Function calling</li><li>OpenRouter</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/Building-Tools-for-LLM" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="prompting">
+        <div class="wcard__meta"><span class="lang" style="--c:#3572A5">Python</span></div>
+        <h3>Requirements Analyst (LCEL)</h3>
+        <p>Turns a client's free-text project brief into a first assessment through a five-stage prompt chain.</p>
+        <p class="ai"><b>AI component.</b> Understand → classify → select → extract missing requirements → assess, composed with <span class="mono small">RunnablePassthrough.assign</span> and a review step between stages.</p>
+        <ul class="chips"><li>LangChain LCEL</li><li>Prompt chaining</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/prompt-chaining-using-LCEL" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard" data-cat="prompting">
+        <div class="wcard__meta"><span class="lang" style="--c:#00B4AB">Dart</span></div>
+        <h3>Bank Support Prompt Chain</h3>
+        <p>Takes a customer's message, works out what they need, and drafts a reply, all in Dart.</p>
+        <p class="ai"><b>AI component.</b> A five-step chain: intent → candidate categories → best category → extract details → reply.</p>
+        <ul class="chips"><li>Dart</li><li>Prompt chaining</li><li>OpenRouter</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/Calling-Provider-SDK-with-Prompt-Chaining" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+
+      <article class="wcard wcard--full" data-cat="prompting">
+        <div class="wcard__meta"><span class="badge">Where it started</span><span class="lang" style="--c:#00B4AB">Dart</span></div>
+        <h3>Calling an LLM API</h3>
+        <p>My first request to an LLM over HTTP, with an API key from OpenRouter. Everything above grew from this.</p>
+        <p class="ai"><b>AI component.</b> Raw chat-completions request and response handling, without an SDK.</p>
+        <ul class="chips"><li>Dart</li><li>HTTP</li><li>OpenRouter</li></ul>
+        <p class="wcard__links"><a href="https://github.com/david-ohimai/call-an-LLM-API" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Repository</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SKILLS ============================== -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow"><b>04</b> Skills, with evidence</p>
+        <h2 id="skills-title">Only what I've actually used.</h2>
+      </div>
+      <p>Pick a project to see which skills it proves. Every skill on this page links back to at least one project above.</p>
+    </div>
+
+    <div class="skills" id="skillbox">
+      <div class="skillgroups">
+        <div class="sg"><h3>AI &amp; LLM engineering <span>14</span></h3><ul>
+          <li class="skill" data-ev="docuchat kodebuddy semrag ragagent mastra">RAG pipelines</li>
+          <li class="skill" data-ev="docuchat kodebuddy semrag ragagent">Embeddings &amp; vector search</li>
+          <li class="skill" data-ev="ragagent">Hybrid search (BM25 + vector)</li>
+          <li class="skill" data-ev="docuchat semrag kodebuddy">Chunking strategies</li>
+          <li class="skill" data-ev="tools ragagent mastra kodebuddy codereview">Tool / function calling</li>
+          <li class="skill" data-ev="kodebuddy codereview ragagent">LangGraph</li>
+          <li class="skill" data-ev="lcel ragagent codereview">LangChain &amp; LCEL</li>
+          <li class="skill" data-ev="mastra">Mastra</li>
+          <li class="skill" data-ev="lcel dartchain">Prompt chaining</li>
+          <li class="skill" data-ev="codereview">Multi-agent supervision</li>
+          <li class="skill" data-ev="codereview kodebuddy">Agent guardrails</li>
+          <li class="skill" data-ev="kodebuddy codereview">Model routing &amp; fallback</li>
+          <li class="skill" data-ev="kodebuddy codereview">Evals &amp; tracing</li>
+          <li class="skill" data-ev="ragagent mastra kodebuddy">Conversation memory</li>
+        </ul></div>
+        <div class="sg"><h3>Backend &amp; APIs <span>10</span></h3><ul>
+          <li class="skill" data-ev="kodebuddy codereview semrag">FastAPI</li>
+          <li class="skill" data-ev="docuchat">Express</li>
+          <li class="skill" data-ev="docuchat kodebuddy semrag codereview">REST API design</li>
+          <li class="skill" data-ev="docuchat kodebuddy">JWT auth &amp; refresh tokens</li>
+          <li class="skill" data-ev="docuchat kodebuddy">Role-based access control</li>
+          <li class="skill" data-ev="docuchat kodebuddy codereview">Validation (Zod, Pydantic)</li>
+          <li class="skill" data-ev="docuchat kodebuddy">OpenAPI / Swagger</li>
+          <li class="skill" data-ev="docuchat">Queues &amp; background jobs</li>
+          <li class="skill" data-ev="codereview mastra">Streaming (SSE)</li>
+          <li class="skill" data-ev="docuchat tools kodebuddy">Retries &amp; circuit breakers</li>
+        </ul></div>
+        <div class="sg"><h3>Data <span>7</span></h3><ul>
+          <li class="skill" data-ev="docuchat kodebuddy medverify">PostgreSQL</li>
+          <li class="skill" data-ev="docuchat kodebuddy medverify">pgvector</li>
+          <li class="skill" data-ev="docuchat">Prisma</li>
+          <li class="skill" data-ev="kodebuddy">SQLModel &amp; Alembic</li>
+          <li class="skill" data-ev="docuchat">Redis</li>
+          <li class="skill" data-ev="semrag ragagent">ChromaDB</li>
+          <li class="skill" data-ev="codereview">SQLite</li>
+        </ul></div>
+        <div class="sg"><h3>Production concerns <span>5</span></h3><ul>
+          <li class="skill" data-ev="docuchat">Caching (cache-aside, ETags)</li>
+          <li class="skill" data-ev="docuchat medverify">Rate limiting</li>
+          <li class="skill" data-ev="docuchat medverify">Security hardening</li>
+          <li class="skill" data-ev="docuchat kodebuddy">Logging, metrics &amp; tracing</li>
+          <li class="skill" data-ev="docuchat kodebuddy medverify">Cost &amp; budget control</li>
+        </ul></div>
+        <div class="sg"><h3>Languages <span>4</span></h3><ul>
+          <li class="skill" data-ev="kodebuddy codereview ragagent semrag tools lcel">Python</li>
+          <li class="skill" data-ev="docuchat mastra codereview kodebuddy">TypeScript</li>
+          <li class="skill" data-ev="dartchain">Dart</li>
+          <li class="skill" data-ev="docuchat kodebuddy">SQL</li>
+        </ul></div>
+        <div class="sg"><h3>Tools &amp; delivery <span>6</span></h3><ul>
+          <li class="skill" data-ev="codereview kodebuddy">Git &amp; PR workflow</li>
+          <li class="skill" data-ev="kodebuddy codereview docuchat">pytest &amp; Vitest</li>
+          <li class="skill" data-ev="codereview kodebuddy">Next.js</li>
+          <li class="skill" data-ev="kodebuddy">Render deployment</li>
+          <li class="skill" data-ev="medverify">AI solution design</li>
+          <li class="skill" data-ev="medverify">Risk &amp; success metrics</li>
+        </ul></div>
+      </div>
+
+      <aside class="evidence" aria-labelledby="ev-title">
+        <h3 id="ev-title">Filter by project</h3>
+        <p>Pick a project to highlight what it shows. Pick it again to clear.</p>
+        <ul>
+          <li><button class="ev" type="button" data-p="docuchat" aria-pressed="false">DocuChat <span>01</span></button></li>
+          <li><button class="ev" type="button" data-p="medverify" aria-pressed="false">MedVerify NG <span>02</span></button></li>
+          <li><button class="ev" type="button" data-p="kodebuddy" aria-pressed="false">KodeBuddy AI <span>team</span></button></li>
+          <li><button class="ev" type="button" data-p="codereview" aria-pressed="false">Code Review Agent</button></li>
+          <li><button class="ev" type="button" data-p="ragagent" aria-pressed="false">LangChain RAG Agent</button></li>
+          <li><button class="ev" type="button" data-p="semrag" aria-pressed="false">Semantic RAG System</button></li>
+          <li><button class="ev" type="button" data-p="mastra" aria-pressed="false">Mastra CLI Agent</button></li>
+          <li><button class="ev" type="button" data-p="tools" aria-pressed="false">Tools for LLMs</button></li>
+          <li><button class="ev" type="button" data-p="lcel" aria-pressed="false">Requirements Analyst</button></li>
+          <li><button class="ev" type="button" data-p="dartchain" aria-pressed="false">Bank Support Chain</button></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRINCIPLES ============================== -->
+<section class="section section--tint" id="principles" aria-labelledby="pr-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow"><b>05</b> How I engineer</p>
+        <h2 id="pr-title">Four rules I keep coming back to.</h2>
+      </div>
+      <p>Each one comes from something I built, usually after seeing what goes wrong without it.</p>
+    </div>
+    <div class="principles">
+      <div class="pr"><b>01</b><h3>Don't let the model answer from nothing</h3><p>If retrieval finds nothing relevant, skip the LLM. <em>KodeBuddy</em> routes that case to a trainer. <em>DocuChat</em> filters out low-scoring chunks.</p></div>
+      <div class="pr"><b>02</b><h3>Enforce access where the data lives</h3><p>Permission checks go in the SQL, not just the handler. <em>KodeBuddy</em>'s retrieval joins on enrollments, and each tool is bound to one learner when it's created.</p></div>
+      <div class="pr"><b>03</b><h3>Assume the provider will fail</h3><p>Every LLM call has a plan B: <em>Gemini → OpenRouter</em>, a verified model chain in the <em>review agent</em>, and a circuit breaker with retries in <em>DocuChat</em>.</p></div>
+      <div class="pr"><b>04</b><h3>Guardrails and evals before features</h3><p>Iteration, time and cost caps go in before the agent loop. Scored eval scenarios go in before I trust a prompt change.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== JOURNEY ============================== -->
+<section class="section" id="journey" aria-labelledby="journey-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow"><b>06</b> Learning journey</p>
+        <h2 id="journey-title">Petroleum engineer → software developer → AI engineer.</h2>
+      </div>
+      <p>I'm early in AI engineering and I won't pretend otherwise. What I can show is a steady record of learning something, building it, and writing it up.</p>
+    </div>
+
+    <ol class="journey">
+      <li class="jrow">
+        <p class="jwhen">Before</p>
+        <div class="jbody"><h3>An engineering degree, then code</h3><p>I studied Petroleum Engineering at the University of Benin. In 2022 I started building software: HTML, CSS and JavaScript sites, C#/Unity game projects, and bootcamp group projects.</p></div>
+      </li>
+      <li class="jrow">
+        <p class="jwhen">2024 to 2025</p>
+        <div class="jbody"><h3>Mobile developer and trainer</h3><p>Freelance Flutter/Dart apps, HNG11 internship tasks, then training new developers. Teaching made me explain <em>why</em> code works, which I now do for AI systems.</p><ul class="chips"><li>Flutter</li><li>Dart</li><li>JavaScript</li><li>C#</li></ul></div>
+      </li>
+      <li class="jrow">
+        <p class="jwhen">Jun to Sep 2026</p>
+        <div class="jbody"><h3>LLM fundamentals, one repo at a time</h3><p>A first raw API call, then prompt chains, tool calling, semantic RAG, a hybrid-search agent with memory, a Mastra agent, and finally a multi-agent code reviewer with an eval harness. Then the KodeBuddy AI team capstone at KodeCamp.</p></div>
+      </li>
+      <li class="jrow jrow--now">
+        <p class="jwhen">Sep to Oct 2026</p>
+        <div class="jbody"><h3>Mastering Backend AI Engineering Bootcamp</h3><p>Production backend engineering, with AI treated as infrastructure that's expensive and unreliable, so it gets the same rigour as any other dependency.</p>
+          <div class="weeks">
+            <div class="week"><b>WEEK 1</b><p>How LLMs work, prompt &amp; context engineering, auth, events, API design</p></div>
+            <div class="week"><b>WEEK 2</b><p>Layered architecture, business logic, queues, external API resilience</p></div>
+            <div class="week"><b>WEEK 3</b><p>Caching, rate limiting, security, observability, plus the group AI challenge</p></div>
+            <div class="week"><b>WEEK 4</b><p>Vectors, ingestion, RAG, agents, model control plane</p></div>
+          </div>
+        </div>
+      </li>
+      <li class="jrow">
+        <p class="jwhen">What tested me</p>
+        <div class="jbody"><h3>Challenges</h3><p>Free-tier models rate-limiting mid-conversation, which pushed me to write retries with exponential backoff. Learning that "the model failed" can mean the provider is down <em>or</em> the model lacks a capability, and that the code needs to tell those apart. Keeping access rules correct when an agent, not a person, is making the query.</p></div>
+      </li>
+      <li class="jrow">
+        <p class="jwhen">Next</p>
+        <div class="jbody"><h3>Building, contributing, working remotely</h3><p>Building software that solves real problems, starting with a public DocuChat demo. Contributing to open-source AI and backend projects, beginning with documentation, tests and small fixes and working up to features. And working with distributed teams on remote roles, where clear writing and good READMEs matter as much as the code.</p><ul class="chips"><li>Open source</li><li>Remote-ready</li><li>Docker &amp; CI/CD next</li></ul></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="section section--tint" id="contact" aria-labelledby="contact-title">
+  <div class="container contact">
+    <div>
+      <p class="eyebrow"><b>07</b> Contact</p>
+      <h2 id="contact-title">Let's build something dependable.</h2>
+      <p class="lead">I'm available for remote AI engineering and backend roles where LLM features have to work in production, not just in a demo. I'm also open to open-source collaborations and to talking about RAG, agents or anything on this page.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="mailto:daveohimai@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+        <a class="btn" href="https://drive.google.com/file/d/1dZ7vPFGzl32c1JyRlWF7Z8-MhBDidhgs/view?usp=sharing" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-file"/></svg>View résumé</a>
+      </div>
+    </div>
+    <div class="linklist">
+      <button type="button" id="copy-email"><svg aria-hidden="true"><use href="#i-copy"/></svg><span><b>Email</b><span>daveohimai@gmail.com</span></span><i>copy</i></button>
+      <a href="https://www.linkedin.com/in/david-ohimai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg><span><b>LinkedIn</b><span>linkedin.com/in/david-ohimai</span></span><i>↗</i></a>
+      <a href="https://github.com/david-ohimai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg><span><b>GitHub · AI work</b><span>github.com/david-ohimai</span></span><i>↗</i></a>
+      <a href="https://github.com/Daveohi" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg><span><b>GitHub · earlier work</b><span>github.com/Daveohi</span></span><i>↗</i></a>
+      <a href="https://drive.google.com/file/d/1dZ7vPFGzl32c1JyRlWF7Z8-MhBDidhgs/view?usp=sharing" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-file"/></svg><span><b>Résumé / CV</b><span>Google Drive · PDF</span></span><i>↗</i></a>
+      <a href="https://github.com/david-ohimai/docuchat-bootcamp-project" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg><span><b>DocuChat repository</b><span>case study 01</span></span><i>↗</i></a>
+      <a href="https://github.com/david-ohimai/medverify-ng" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg><span><b>MedVerify NG repository</b><span>case study 02</span></span><i>↗</i></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <canvas id="ripples" aria-hidden="true"></canvas>
+  <div class="container footer__in">
+    <p><strong>David Ohimai</strong> · AI Engineer · Benin City, Nigeria</p>
+    <p class="footer__links">
+      <a href="https://github.com/david-ohimai" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/david-ohimai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1dZ7vPFGzl32c1JyRlWF7Z8-MhBDidhgs/view?usp=sharing" target="_blank" rel="noopener">Résumé</a>
+      <a href="mailto:daveohimai@gmail.com">Email</a>
+      <a href="https://github.com/david-ohimai/ai-engineering-portfolio" target="_blank" rel="noopener">Source</a>
+    </p>
+    <p class="mono small">Hand-written HTML, CSS &amp; JS · 2026</p>
+  </div>
+</footer>
+
+<!-- Command palette -->
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Quick navigation">
+  <div class="cmdk__box">
+    <div class="cmdk__in"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="cmdk-input" type="text" placeholder="Jump to a section, project or link…" autocomplete="off" spellcheck="false" aria-controls="cmdk-list" aria-activedescendant=""></div>
+    <ul id="cmdk-list" role="listbox"></ul>
+    <div class="cmdk__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
